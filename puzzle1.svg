@@ -1,0 +1,507 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 640 480" width="100%" height="100%" id="root" class="noscript" preserveAspectRatio="xMidYMid meet">
+	<title>
+		🧩 Puzzle.SVG
+	</title>
+	<defs>
+		<g id="ps">
+		</g>
+		<g id="ms">
+		</g>
+		<image id="img" width="100" height="100" pointer-events="none" href="" />
+		<filter id="shadow">
+			<feDropShadow dx="2" dy="2" stdDeviation="5" />
+		</filter>
+		<filter id="shadowlower">
+			<feDropShadow dx="1" dy="1" stdDeviation="2" />
+		</filter>
+		<radialGradient id="menufade" cx="0" cy="0" fr="1">
+			<stop offset="0%" stop-color="#FFF0" />
+			<stop offset="100%" stop-color="#FFF8" />
+		</radialGradient>
+		<filter id="bevel" filterUnits="objectBoundingBox" x="-10%" y="-10%" width="150%" height="150%">
+			<feGaussianBlur in="SourceAlpha" stdDeviation="3" result="blur" />
+			<feSpecularLighting in="blur" surfaceScale="5" specularConstant="0.5" specularExponent="10" result="specOut" lighting-color="white">
+				<fePointLight x="-5000" y="-10000" z="20000" />
+			</feSpecularLighting>
+			<feComposite in="specOut" in2="SourceAlpha" operator="in" result="specOut2" />
+			<feComposite in="SourceGraphic" in2="specOut2" operator="arithmetic" k1="0" k2="1" k3="1" k4="0" result="litPaint" />
+		</filter>
+		<!-- </pattern> -->
+	</defs>
+	<image x="15%" y="95" width="66%" height="68%" href="./PuzzleImage/P1.jpg">
+	</image>
+	<g transform="translate(10, 30)" id="titleBox">
+		<text x="50%" y="5" text-anchor="middle" class="comentTitles">
+			It still seems like a lot of missing details?
+		</text>
+		<text x="50%" y="18" text-anchor="middle" class="comentTitles0">
+			Well, according to the Venice Charter for the Conservation and Restoration of Monuments,
+		</text>
+		<text x="50%" y="31" text-anchor="middle" class="comentTitles01">
+			restoration must be carried out with respect to the original, and must stop at the moment where conjecture begins.
+		</text>
+		<text x="50%" y="44" text-anchor="middle" class="comentTitles1">
+			But this doesn't stop us from making our well documented assumptions on how the originals most probably looked like.
+		</text>
+		<text x="50%" y="57" text-anchor="middle" class="comentTitles2">
+			With posting the puzzle pice in the right place you restart this wallpainting!
+		</text>
+		<g id="ins">
+		</g>
+	</g>
+	<g class="ui tl">
+		<g id="hud">
+			<rect x="0" y="0" width="450" height="30" stroke-width="0" fill="url(#menufade)" pointer-events="none" />
+			<text id="time" x="10" y="20">
+				--:--
+			</text>
+			<!--
+			<text id="new-game" class="button noscript-hidden" x="100" y="20">
+			New Game
+			</text>
+			-->
+			<text class="noscript-warn" x="70" y="20">
+				Please open in browser to play!
+			</text>
+		</g>
+	</g>
+	<g class="ui bl">
+		<g id="certificate">
+			<rect x="21%" y="-700" width="140%" height="150" stroke="#0008" stroke-width="0.1" fill="#FFF" />
+			<rect x="23%" y="-690" width="136%" height="135" stroke="#060" fill="#0000" stroke-width="0.5" />
+			<rect x="25%" y="-682" width="132%" height="120" stroke="#060" fill="#0000" stroke-width="0.5" />
+			<text x="92%" y="-650" text-anchor="middle" id="success2" class="h1">
+				Congratulations!
+			</text>
+			<text x="92%" y="-620" text-anchor="middle"  id="success21" >
+				You have solved the puzzle in
+			</text>
+			<text x="92%" y="-600" text-anchor="middle"  id="success22" >
+				You have solved the puzzle in
+			</text>
+			<text x="92%" y="-580" text-anchor="middle"  id="success23" >
+				You have solved the puzzle in
+			</text>
+			<text x="170" y="150" style="display:none" text-anchor="middle" id="time-used">
+				--:--
+			</text>
+			<text x="170" y="780" style="display:none" text-anchor="middle">
+				Puzzle Size
+			</text>
+			<text x="170" y="800" style="display:none" text-anchor="middle" id="puzzle-size">
+				x×y (n sdf)
+			</text>
+			<text x="40" y="-60" style="display:none" >
+				Since
+			</text>
+			<text x="90" y="-60" style="display:none" id="time-start">
+				&lt;date&gt;
+			</text>
+			<text x="40" y="-40" style="display:none" >
+				Until
+			</text>
+			<text x="90" y="-40" style="display:none" id="time-end">
+				&lt;date&gt;
+			</text>
+		</g>
+	</g>
+		
+	<g class="ui mc">
+		<g id="menu">
+			<rect x="-5000" y="-5000" width="10000" height="10000" fill="#0004" />
+			<rect x="-160" y="-250" width="320" height="500" rx="10" fill="url(#wood)" filter="url(#shadow)" />
+			<rect x="-160" y="-250" width="320" height="500" rx="10" fill="#FFF4" stroke-width="0.1" />
+			<foreignObject x="-160" y="-250" width="320" height="500">
+				<body xmlns="http://www.w3.org/1999/xhtml">
+					<h3>
+						Start a New Puzzle!
+					</h3>
+					<form id="menuform">
+						<div class="align-center pastearea-container">
+							<textarea class="pastearea" id="dddd" maxlength="0" placeholder="You can paste/drop any image here." />
+							<img id="preview" src="" />
+						</div>
+						<div class="align-center">
+							<label class="button">
+								&lt;Click to Select Image&gt;
+								<input id="image-input" type="file" accept="image/*" onChange="ImgChange()" />
+							</label>
+						</div>
+						<div>
+							<label>
+								Puzzle Size:
+							</label>
+							<input type="number" class="size-input" id="col-input" size="3" min="2" value="6" />
+							<label>
+								×
+							</label>
+							<input type="number" class="size-input" id="row-input" size="3" min="2" value="4" />
+							<br />
+							<span id="size-count" />
+						</div>
+						<div>
+							<label>
+								<input type="checkbox" id="fixed-pattern" value="y" />
+								Fixed pattern
+								<span class="secondary-desc">
+									(may be harder depends on the image)
+								</span>
+							</label>
+						</div>
+						<div class="align-center">
+							<button type="submit">
+								Start Game
+							</button>
+							<button type="reset">
+								Cancel
+							</button>
+						</div>
+					</form>
+					<footer>
+						<div class="align-center">
+						</div>
+					</footer>
+				</body>
+			</foreignObject>
+		</g>
+	</g>
+	<style type="text/css">
+		<![CDATA[
+		#root {
+		touch-action: none;
+		}
+		background-image: linear-gradient(to bottom, transparent, rgba(255, 255, 255, 0.7));
+		#titleBox {
+		}
+		text, body {
+		user-select: none;
+		}
+		body {
+		margin: 1em 0;
+		}
+		img[src=""] {
+		}
+		footer {
+		position: fixed;
+		font-size: small;
+		bottom: 0;
+		width: 100%;
+		}
+		.field, input, textarea, button {
+		background-color: #FFF;
+		color: #000;
+		border: solid 1px rgba(0, 0, 0, 0.1);
+		border-radius: 0.4em;
+		margin: 0.1em;
+		padding: 0.4em 0.8em;
+		font-size: 80%;
+		transition: box-shadow 0.1s;
+		display: inline-block;
+		}
+		input:focus, textarea:focus, button:focus {
+		outline: none;
+		}
+		.field, input, textarea {
+		box-shadow: -0.02em -0.02em 0.1em rgba(255, 255, 255, 0.9) inset, 0.02em 0.02em 0.1em rgba(0, 0, 0, 0.35) inset;
+		background-image: linear-gradient(to bottom, transparent, rgba(255, 255, 255, 0.7));
+		}
+		input:focus, textarea:focus {
+		box-shadow: -0.05em -0.05em 0.1em rgba(255, 255, 255, 0.9) inset, 0.05em 0.05em 0.1em rgba(0, 0, 0, 0.35) inset;
+		}
+		.field.disabled, input[disabled], textarea[disabled] {
+		color: inherit;
+		box-shadow: 0 0 0 transparent inset;
+		filter: contrast(60%) grayscale(50%);
+		cursor: not-allowed;
+		}
+		button {
+		position: relative;
+		color: black;
+		background-color: #A86;
+		background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.7), transparent);
+		box-shadow: 0.05em 0.05em 0.1em rgba(255, 255, 255, 0.9) inset, -0.05em -0.05em 0.1em rgba(0, 0, 0, 0.35) inset;
+		text-shadow: 0.05em 0.05em 0.02em rgba(255, 255, 255, 0.9);
+		cursor: pointer;
+		}
+		button::before {
+		content: '';
+		position: absolute;
+		margin: 0;
+		padding: 0;
+		top: 0.3em;
+		bottom: 0.3em;
+		left: 0.4em;
+		right: 0.4em;
+		outline: dotted 1px;
+		opacity: 0;
+		pointer-events: none;
+		transition: opacity 0.1s;
+		}
+		button:not([disabled]):hover {
+		background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.1));
+		}
+		button:active {
+		box-shadow: -0.05em -0.05em 0.1em rgba(255, 255, 255, 0.9) inset, 0.05em 0.05em 0.1em rgba(0, 0, 0, 0.35) inset;
+		}
+		button:focus::before {
+		opacity: 0.75;
+		}
+		button:not([disabled])::first-letter {
+		text-decoration: underline;
+		}
+		button[type='submit'] {
+		font-weight: bolder;
+		}
+		button[disabled] {
+		color: inherit;
+		box-shadow: 0 0 0 transparent inset;
+		text-shadow: -0.05em -0.05em 0.02em rgba(0, 0, 0, 0.35), 0.05em 0.05em 0.02em white;
+		filter: contrast(60%) grayscale(50%);
+		cursor: not-allowed;
+		}
+		#preview {
+		max-height: 220px;
+		max-width: 280px;
+		object-fit: contain;
+		margin-top: 1em;
+		border: 2px dotted #0004;
+		background-color: #FFF;
+		background-image:
+		linear-gradient(45deg, #CCC 25%, transparent 25%, transparent 75%, #CCC 75%, #CCC),
+		linear-gradient(45deg, #CCC 25%, transparent 25%, transparent 75%, #CCC 75%, #CCC);
+		background-size: 10px 10px;
+		background-position: 0 0, 5px 5px;
+		}
+		#paste-helper {
+		visibility: hidden;
+		width: 0;
+		height: 0;
+		border: none;
+		}
+		h3 {
+		margin: 0;
+		}
+		#menuform div {
+		margin: 0.5em;
+		}
+		.align-center, h3 {
+		text-align: center;
+		}
+		label.button input {
+		visibility: hidden;
+		position: absolute;
+		width: 0;
+		height: 0;
+		padding: 0;
+		margin: 0;
+		}
+		.secondary-desc {
+		font-size: smaller;
+		opacity: 0.6;
+		}
+		a, .button {
+		fill: #840;
+		color: #840;
+		text-decoration: none;
+		transition-property: fill, color;
+		transition-duration: 0.5s;
+		}
+		a, button, .button {
+		cursor: pointer;
+		}
+		a:hover, .button:hover {
+		color: #F80;
+		fill: #F80;
+		text-decoration: underline dashed;
+		}
+		.size-input {
+		width: 3em;
+		}
+		.pastearea-container {
+		position: relative;
+		min-height: 1em;
+		}
+		textarea.pastearea {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		width: 100%;
+		height: 100%;
+		resize: none;
+		border: none;
+		outline: none;
+		cursor: default;
+		background: #0000;
+		caret-color: #0000;
+		margin: 0;
+		padding: 0;
+		box-shadow: none;
+		text-shadow: none;
+		display: block;
+		}
+		textarea.pastearea::placeholder {
+		text-align: center;
+		color: #000;
+		opacity: 0.5;
+		}
+		.noscript .noscript-hidden {
+		display: none;
+		}
+		.noscript-warn {
+		display: none;
+		}
+		.noscript .noscript-warn {
+		display: block;
+		}
+		.ui.tl {
+		transform: translate(0, 0);
+		}
+		.ui.bl {
+		transform: translate(0, 100%);
+		}
+		.ui.mc {
+		transform: translate(50%, 50%);
+		}
+		#certificate, img {
+		pointer-events: none;
+		}
+		#certificate, #hud, #menu, input, textarea, button {
+		font-family: Georgia, 'Times New Roman', serif;
+		}
+		#menu:not(.show) {
+		display: none;
+		}
+		#certificate:not(.show) {
+			display : none;s
+		}
+		#certificate text {
+		fill: #060;
+		}
+		.comentTitles {
+		font-size : 12px;
+		font-weight: bold;
+		fill: #a32204!important;
+		}
+		.comentTitles1, .comentTitles0, .comentTitles01 {
+		font-size : 12px;
+		fill: #a32204!important;
+		}
+		.comentTitles2 {
+		font-size : 12px;
+		font-weight: bolder;
+		fill: #a32204!important;
+		}
+		#certificate .h1 {
+		font-size: x-large;
+		font-weight: bold;
+		}
+		.draggable {
+		filter: url(#shadowlower);
+		}
+		.draggable .handler, .draggable.handler {
+		cursor: move;
+		cursor: grab;
+		}
+		.draggable.grabbing {
+		filter: url(#shadow);
+		}
+		.draggable.grabbing.handler, .draggable.grabbing .handler {
+		cursor: move;
+		cursor: grabbing;
+		}
+		.pzoverlay {
+		stroke: #000;
+		fill: #0008;
+		opacity: 0.5;
+		filter: url(#bevel);
+		}
+		#ms>mask>use {
+		fill: #FFF;
+		}
+		#backGame:hover {
+		cursor : pointer;
+		}
+		]]>
+	</style>
+	<script type="application/json" id="data" />
+	<script type="text/javascript" href="main1.js" />
+	<script type="text/javascript" href="./lib/js/jquery.js" />
+	<script>
+		const langs = [{
+		"vid1": "Four centuries of castle history",
+		"vid2": "Wallpaintings reloaded",
+		"puzzlegame": "Play! Restoration puzzle",
+		"interationgame": "Use your fantasy! Interpretation game",
+		"gametopic": "You can also be a mural painting restorer!",
+		"subtitle": "We have already made the first step in the restoration process,",
+		"subtitle0": " and uncovered the remains of the 17th century wallpainting from beneath many layers of plaster.",
+		"conclude": "Now it's your turn to complete the picture with the missing details.",
+		"gametopic2": "It still seems like a lot of missing details?",
+		"gametopic20": "Well, according to the Venice Charter for the Conservation and Restoration of Monuments,",
+		"gametopic21": "restoration must be carried out with respect to the original, and must stop at the moment where conjecture begins.",
+		"subtitle2": "But this doesn't stop us from making our well documented assumptions on how the originals most probably looked like.",
+		"conclude2": "The next level of the puzzle will reveal it to you!",
+		"success1": "Congratulations, your painting is now restored!",
+		"success11" : "While restorers worked for months on the orignal, it only took you .... minutes",
+		"success2": "Great work! Now you know how old wallpaitings are being restored.",
+		"success21" : "During this process of restoration and historical researching,",
+		"success22" : "we also found out a lot of interesting stories about the life of the Daniels.",
+		"success23" : "Visit the rest of the exhibition to discover them."
+		}, {
+		"vid1": "Castelul Daniel - 4 secole de istorie",
+		"vid2": "Fresco reloaded",
+		"puzzlegame": "Joacă-te de-a restauratorul!",
+		"interationgame": "Folosește-ți imaginația!",
+		"gametopic": "Devino și tu restaurator de picturi murale!",
+		"subtitle": "Noi am făcut deja primele demersuri în minuțiosul proces de restaurare,",
+		"subtitle0": "și am îndepărtat stratul gros de tencuială aplicat de-a lungul secolelor peste suprafețele pictate din anii 1680.",
+		"conclude": "Acum e rândul tău să completezi imaginea.",
+		"gametopic2": "Încă ți se pare că sunt multe detalii lipsă?",
+		"gametopic20": "Potrivit Cartei de la Veneția a Conservării și Restaurării Monumentelor Istorice,",
+		"gametopic21": "restaurarea trebuie să se bazeze pe respectul materialului original, și trebuie să se oprească acolo unde începe ipoteza.",
+		"subtitle2": "Dar asta nu ne-a împiedicat să avem niște ipoteze bine documentate despre cum arătau originalele.",
+		"conclude2": "Poți descoperi și tu, completând următorul nivel al puzzle-ului.",
+		"success1": "Felicitări, ai reușit să restaurezi fresca în doar .... minute!",
+		"success11" : "Să știi că restauratorii au migălit timp de mai multe luni pe originale.",
+		"success2": "Bravo! Acum ști și tu cum se restaurează o frescă.",
+		"success21" : "Dealungul procesului de restaurare și de cercetare istorică,",
+		"success22" : "am descoperit multe povești interesante despre viața Danielilor.",
+		"success23" : "Vzitează expoziția să le descoperi și tu."
+		}, {
+		"vid1": "A Daniel-kastély 4 évszázada",
+		"vid2": "Falképek újratöltve",
+		"puzzlegame": "Játsz restaurálósdit!",
+		"interationgame": "Vesd be a képzelőerőd!",
+		"gametopic": "Légy te is falfestmény restaurátor!",
+		"subtitle": "Mi már elvégeztük a felújítási folyamat első lépéseit,",
+		"subtitle0": "és a sok réteg vakolat alól, aprólékos munkával feltártuk a 17. századi falkép maradványait.",
+		"conclude": "Most rajtad a sor, retusáld a képet.",
+		"gametopic2": "Úgy tűnik, hogy még mindig sok a hiányosság?",
+		"gametopic20": "A műemlékek konzerválására és restaurálására vonatkozó Velencei Charta elveit követve,",
+		"gametopic21": "a felújítás során tiszteletben kell tartani az eredeti alkotást, történelmi dokumentumok hiányában tilos az eredeti tárgy újboli létrehozása.",
+		"subtitle2": "De ez nem akadályozott meg abban, hogy korabeli dokumentumok analógiája alapján megpróbáljuk elképzelni, hogy milyenek lehettek az olaszteleki falfestmények eredeti pompájukban.",
+		"conclude2": " A kirakós következő szintjét megoldva te is megtudhatod.",
+		"success1": "Gratulálunk, a falképed restaurálva van!",
+		"success11" : "Mig az eredetin hónapokig dolgoztak a restaurátorok, neked alig ..... percbe tellett.",
+		"success2": "Nagyszerű munka! Most már te is tudod, hogyan restaurálják a falfestményeket.",
+		"success21" : "A felújítási folyamat része az alapos történeti kutatás is,",
+		"success22" : " mely alatt sok érdekes történetet fedeztünk fel a Danielek életéről.",
+		"success23" : "Nézd meg a kiállítás többi részét, iskerkedj meg velük."
+		}]
+
+		var nodeLanges = localStorage.getItem("langState");
+		$(".comentTitles")[0].textContent = langs[nodeLanges]['gametopic2']
+		$(".comentTitles0")[0].textContent = langs[nodeLanges]['gametopic20']
+		$(".comentTitles01")[0].textContent = langs[nodeLanges]['gametopic21']
+		$(".comentTitles1")[0].textContent = (nodeLanges === 2) ? langs[nodeLanges]['subtitle2'] : langs[nodeLanges]['subtitle21'] + langs[nodeLanges]['subtitle2']
+		$(".comentTitles2")[0].textContent = langs[nodeLanges]['conclude2']
+		$("#success2")[0].textContent = langs[nodeLanges]['success2']
+		$("#success21")[0].textContent = langs[nodeLanges]['success21']
+		$("#success22")[0].textContent = langs[nodeLanges]['success22']
+		$("#success23")[0].textContent = langs[nodeLanges]['success23']
+	</script>
+</svg>
